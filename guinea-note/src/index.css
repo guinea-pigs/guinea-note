@@ -2,12 +2,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Work Sans',sans-serif;
-  background:#f4f4ef;
+  background:#808080;
 }
 
 .center {
   text-align: center;
+  color: #ff7777;
 }
+
+.App-logo {
+  align-items: center;
+  max-height: 40px;
+  padding-left: 8px;
+}
+
 a {
   color:#636363;
   text-decoration: none;

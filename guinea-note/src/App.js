@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import guineaPig from './guinea-pig-src.jpg';
 
 import firebase from './firebase';
 
@@ -30,6 +31,7 @@ class App extends Component {
 
         <div className="navbar">
           <h2 className="center ">Guinea Note</h2>
+          <img src={guineaPig} className="App-logo" alt="logo" />
         </div>
 
         <Router>
