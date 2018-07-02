@@ -1,59 +1,52 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+
+import firebase from './firebase';
+
+import Note from './Note';
+import LogIn from './LogIn';
+import SignUp from './SignUp';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      books: []
-    };
-  }
 
   componentDidMount() {
-    axios.get('/api/book')
-      .then(res => {
-        this.setState({ books: res.data });
-        console.log(this.state.books);
-      });
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.props.dispatch({ type: 'AUTHED_TRUE' });
+      } else {
+        this.props.dispatch({ type: 'AUTHED_FALSE' });
+      }
+    })
   }
+
 
   render() {
     return (
-      <div class="container">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              BOOK CATALOG
-            </h3>
-          </div>
-          <div class="panel-body">
-            <h4><Link to="/create"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Book</Link></h4>
-            <table class="table table-stripe">
-              <thead>
-                <tr>
-                  <th>ISBN</th>
-                  <th>Title</th>
-                  <th>Author</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.books.map(book =>
-                  <tr>
-                    <td><Link to={`/show/${book._id}`}>{book.isbn}</Link></td>
-                    <td>{book.title}</td>
-                    <td>{book.author}</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
+      <div className="App">
+
+        <div className="navbar">
+          <h2 className="center ">Guinea Note</h2>
         </div>
+
+        <Router>
+          <div>
+            <Route exact path="/" component={LogIn} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/home" component={Note} />
+          </div>
+        </Router>
       </div>
     );
   }
 }
 
-export default App;
+
+const mapStateToProps = (state) => ({
+  authed: state.authed
+})
+
+export default connect(mapStateToProps)(App);
