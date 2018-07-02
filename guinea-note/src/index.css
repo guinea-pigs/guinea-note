@@ -100,7 +100,7 @@ a:hover {
 
 
 
-/* Post Styles */
+/* Note Styles */
 .post-container {
   background:#fff;
   padding:50px;
@@ -132,7 +132,7 @@ a:hover {
   outline:none;
 }
 
-/* All Posts */
+/* All Notes */
 .all_post_heading {
   text-align:center;
   font-weight:400;
