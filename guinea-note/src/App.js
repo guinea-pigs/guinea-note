@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import guineaPig from './guinea-pig-src.jpg';
+import Fade from 'react-reveal/Fade';
+
 
 import firebase from './firebase';
 
@@ -28,12 +30,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <div className="navbar">
           <h2 className="center ">Guinea Note</h2>
+          <Fade left>
           <img src={guineaPig} className="App-logo" alt="logo" />
+          </Fade>
         </div>
-
         <Router>
           <div>
             <Route exact path="/" component={LogIn} />
