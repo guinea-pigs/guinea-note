@@ -98,9 +98,9 @@ class Note extends Component {
 
                     </div>
                     <form className="form" onSubmit={this.handleSubmit}>
-                        <input required type="text" ref={(input) => this.titleInput = input} placeholder="Enter Title for Note"
+                        <input required type="text" ref={(input) => this.titleInput = input} placeholder="Title"
                         /><br /><br />
-                        <textarea required ref={(input) => this.messageInput = input} placeholder="Enter the Note" cols="28" rows="5"></textarea><br />
+                        <textarea required ref={(input) => this.messageInput = input} placeholder="Add text here" cols="28" rows="5"></textarea><br />
                         <button>Post Note</button>
 
                     </form>

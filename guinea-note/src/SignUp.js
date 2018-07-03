@@ -41,7 +41,7 @@ class SignUp extends Component {
                     <input type="password" ref={(input) => this.getPassword = input} placeholder="Enter Password" /><br /><br />
                     <button>Sign Up</button>
                 </form>
-                <p className="sub-text center">Already have an account, <Link to="/">Sign In</Link></p>
+                <p className="sub-text center">Already a member?, <Link to="/">Sign In</Link></p>
                 {this.props.errors ? <p style={{ color: '#ff7777' }}>{this.props.errors.message}</p> : null}
             </div>
         );
