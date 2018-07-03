@@ -39,7 +39,7 @@ class LogIn extends Component {
                     <input required ref={(input) => this.getPassword = input} type="password" placeholder="Enter Password" /><br /><br />
                     <button>Sign In</button>
                 </form>
-                <p className="sub-text center">Don't have an account, <Link to="/signup">Sign Up</Link></p>
+                <p className="sub-text center">New to Guine Note?, <Link to="/signup">Sign Up</Link></p>
                 {this.props.errors ? <p style={{ color: '#ff7777' }}>{this.props.errors.message}</p> : null}
             </div>
         );
