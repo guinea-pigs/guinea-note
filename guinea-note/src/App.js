@@ -34,7 +34,7 @@ class App extends Component {
           <h2 className="center ">Guinea Note</h2>
           <Fade left>
           <img src={guineaPig} className="App-logo" alt="logo" />
-          </Fade>
+          </Fade>                    
         </div>
         <Router>
           <div>

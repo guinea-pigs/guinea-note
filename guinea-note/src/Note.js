@@ -88,11 +88,12 @@ class Note extends Component {
     render() {
         return (
             <div className="post-grid">
+            <div className="navbar">
+                <div className="logout-container">
+                <button className="logout" onClick={this.handleLogout}>Logout</button>
+                </div>
+            </div>
                 <div className="post-container">
-                    <div className="logout-container">
-                        <h2 className="righter"></h2>
-                        <button className="logout" onClick={this.handleLogout}>Logout</button>
-                    </div>
                     <div className="first-stuff">
                         <h2 className="post_heading">Note Content</h2>
 
