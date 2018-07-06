@@ -29,9 +29,6 @@ class Note extends Component {
 
     }
 
-
-
-
     handleSubmit = (e) => {
         e.preventDefault();
         const title = this.titleInput.value;

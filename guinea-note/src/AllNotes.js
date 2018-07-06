@@ -8,6 +8,7 @@ import firebase from './firebase';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+
 class AllNotes extends Component {
     handleDelete = (note) => {
         this.props.dispatch({ type: 'DELETE', id: note.id })
@@ -43,8 +44,7 @@ class AllNotes extends Component {
                                         {firebase.auth().currentUser.uid === note.uid ? <button className="delete" onClick={() => this.handleDelete(note)}>Delete Note</button> : null}
                                         {firebase.auth().currentUser.uid === note.uid ? <button className="edit" onClick={() => this.props.dispatch({ type: 'EDIT', id: note.id })}>Edit Note</button> : null}
                                     </div>
-                                </div>
-                                )
+                                </div>)
                             }
 
                         </div>
